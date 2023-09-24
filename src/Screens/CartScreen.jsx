@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -9,6 +9,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
   const data = useSelector((state) => state.data) || [];
   const handleOpenClose = () => setShowCart(!showCart);
+  const [count, setCount] = useState(0);
+  const [price, setPrice] = useState(0);
   const [userInput, setUserInput] = useState({});
   const [showAlert, setShowAlert] = useState(false);
   const [errorText, setErrorText] = useState("");
@@ -85,6 +87,22 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
       // handle order
     } else setShowAlert(true);
   };
+  useEffect(() => {
+    let tempQty = 0;
+    let tempPrice = 0;
+    data.map((item, index) =>
+      item.products.map((product) => {
+        if (product.qty > 0) {
+          if(parseFloat(product.discount)>0){
+            tempPrice += ((parseFloat(product.price)/100)*(product.discount))*(parseFloat(product.qty))
+          }
+          tempQty += product.qty;
+        }
+      })
+    );
+    setPrice(tempPrice);
+    setCount(tempQty);
+  }, [data]);
   return (
     <>
       <Modal
@@ -94,7 +112,7 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
         autoFocus
       >
         <Modal.Header closeButton>
-          <Modal.Title>Ready To Check Out !</Modal.Title>
+          <Modal.Title>Ready To Check Out ! </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Container>
@@ -255,6 +273,7 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
                 </InputGroup>
               </Col>
             </Row>
+            {(count>0 && price>0) && <h3>{count} items | Rs.{price}</h3>}
             <Row className="">
               {data.map((item, index) =>
                 item.products.map(
