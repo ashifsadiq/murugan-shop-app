@@ -1,0 +1,22 @@
+import React from 'react';
+import { InputGroup, Form, FormControl } from 'react-bootstrap';
+
+
+
+function StateDropdown() {
+  return (
+    <InputGroup size="2m" style={{ width: "30%", margin: 10 }}>
+      <InputGroup.Text id="inputGroup-sizing-lg">State</InputGroup.Text>
+      <Form.Control as="select" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+        <option value="">Select a State</option>
+        {statesInIndia.map((state, index) => (
+          <option key={index} value={state}>
+            {state}
+          </option>
+        ))}
+      </Form.Control>
+    </InputGroup>
+  );
+}
+
+export default StateDropdown;
