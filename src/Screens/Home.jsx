@@ -51,8 +51,8 @@ const Home = () => {
                         {item.price}
                       </span>
                       <span>{` ${(
-                        (parseInt(item.price) / 100) *
-                        parseInt(item.discount)
+                        (parseFloat(item.price) / 100) *
+                        parseFloat(item.discount)
                       ).toFixed(2)} `}</span>
                     </Card.Subtitle>
                     {item.discount != "" && (

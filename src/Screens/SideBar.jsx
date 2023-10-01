@@ -1,5 +1,3 @@
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Badge from "react-bootstrap/Badge";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -23,6 +21,7 @@ function SideBar({ show = false, setOpenSideBase }) {
               <ListGroup.Item
               key={index}
               onClick={()=>{
+                // item.category_image
                 handleToggle()
                 dispatch(ChangeActiveCatIndex(index))
               }}
@@ -31,7 +30,9 @@ function SideBar({ show = false, setOpenSideBase }) {
                 className="d-flex justify-content-between align-items-start"
               >
                 <div className="ms-2 me-auto">
-                  <div className="fw-bold">{item.category_eng_name}</div>
+                  <img src={"https://adminmurugan.ashifsadiq.in/CatImage/"+item.category_image} width={60} style={{
+                    borderRadius:50
+                  }} /><div className="fw-bold">{item.category_eng_name}</div>
                   {item.category_tam_name}
                 </div>
                 <Badge bg="primary" pill>
