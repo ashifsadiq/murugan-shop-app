@@ -3,10 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, createData } from "../redux/action";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
 import CustomNavbar from "./CustomNavbar";
 import CartScreen from "./CartScreen";
-
-
 
 const Home = () => {
   const homeData = useSelector((state) => state.homeData) || [];
@@ -26,12 +25,8 @@ const Home = () => {
     fetchData();
   }, [currentCatIndex]); // Fetch data when currentCatIndex changes
 
-
- 
   return (
     <React.Fragment>
-  
-      
       <style>
         {`
           body {
@@ -41,14 +36,15 @@ const Home = () => {
         `}
       </style>
       <div className="col-md-12 px-0 py-0">
-            <div className="py-2 px-2 marquee L" style={{ backgroundColor: '#000000', color: 'red' }}>
-                <div className="marquee-content">
-                   60 % Discount
-                </div>
-            </div>
+        <div
+          className="py-2 px-2 marquee L"
+          style={{ backgroundColor: "#000000", color: "red" }}
+        >
+          <div className="marquee-content">60 % Discount</div>
         </div>
+      </div>
       <CustomNavbar onOrderConform={fetchData} />
-    
+
       <Container className="justify-content-md-center">
         {Array.isArray(homeData) && homeData.length > 0 ? (
           currentCatIndex > 0 ? ( // Display a specific category
@@ -151,15 +147,37 @@ const Home = () => {
             // Display all categories
             homeData.map((category, catIndex) => (
               <React.Fragment key={catIndex}>
-                <h3
+                <div
                   style={{
-                    textAlign: "center",
-                    color: "black",
-                    fontFamily: "initial",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                 >
-                  {category.category_eng_name} {category.category_tam_name}
-                </h3>
+                  <Image
+                    style={{
+                      borderRadius: 10,
+                      width: 100,
+                      height: 100,
+                      objectFit: "cover",
+                      margin: 10,
+                    }}
+                    src={
+                      "https://adminmurugan.ashifsadiq.in/CatImage/" +
+                      category.category_image
+                    }
+                    rounded
+                  />
+                  <h3
+                    style={{
+                      textAlign: "center",
+                      color: "black",
+                      fontFamily: "initial",
+                    }}
+                  >
+                    {category.category_eng_name} {category.category_tam_name}
+                  </h3>
+                </div>
                 <Row className="justify-content-md-center" key={refresh}>
                   {category.products.map((item, index) => (
                     <Col xs={12} sm={6} md={4} lg={3} key={index}>
