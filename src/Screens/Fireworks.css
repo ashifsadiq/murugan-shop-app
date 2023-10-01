@@ -1,0 +1,68 @@
+/* @keyframes firework {
+    0% {
+      transform: translateY(100vh);
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+      box-shadow: 0 0 10px #fff;
+    }
+    50% {
+      transform: translateY(30vh);
+      width: 1px;
+      height: 1px;
+      opacity: 0.3;
+      box-shadow: 0 0 10px #fff;
+    }
+    80% {
+      transform: translateY(30vh);
+      width: 1px;
+      height: 5px;
+      opacity: 1;
+      box-shadow: custome-box-shadow(150);
+    }
+    100% {
+      transform: translateY(33vh);
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      box-shadow: custome-box-shadow(150);
+    }
+  }
+  
+  @function custome-box-shadow($n) {
+    $box-shadow: "";
+    $shadows: null;
+    @for $i from 1 through $n {
+      @if ($i < ($n / 4)) {
+        $shadows: -(random($i * 7)) + "px " + -(random($i * 7)) + "px #e7b722";
+      } @else if ($i > ($n / 2) and $i < ($n * 3 / 4)) {
+        $shadows: random($i) + "px " + -(random($i)) + "px #e7b722";
+      } @else if ($i > ($n * 3 / 4) and $i < $n) {
+        $shadows: random($i) + "px " + random($i) + "px #e7b722";
+      } @else {
+        $shadows: -(random($i * 3)) + "px " + random($i) + "px #e7b722";
+      }
+      $box-shadow: $box-shadow + $shadows + " ,";
+    }
+    @return str_slice(unquote($box-shadow), 0, str_length($box-shadow)-1);
+  }
+   */
+  /* body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url("https://images.unsplash.com/photo-1495344517868-8ebaf0a2044a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzU1MTIxNzc&ixlib=rb-4.0.3&q=80");
+    background-size: cover;
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 1px;
+      margin: auto;
+      border-radius: 50%;
+      transform: translateY(30vh);
+      box-shadow: custome-box-shadow(150);
+      background: #e7b722;
+      animation: firework 2s ease-in-out infinite;
+    }
+  }
+   */

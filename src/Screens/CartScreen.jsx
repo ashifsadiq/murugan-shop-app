@@ -80,6 +80,8 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
           console.log(resJson)
           if(resJson.success == 1){
             onOrderConform(resJson)
+            handleOpenClose()
+            setErrorText("")
           }else{
             setErrorText(resJson.message)
           }
@@ -111,10 +113,10 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
         fullscreen={true}
         autoFocus
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Ready To Check Out ! </Modal.Title>
+        <Modal.Header closeButton style={{ backgroundColor: '#00ffbf' }}>
+          <Modal.Title style={{color:'black'}}>Ready To Check Out ! </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body style={{ backgroundColor: '#00ffbf' }}>
           <Container>
             <p style={{color:"#f00", textAlign:'center'}}>{errorText}</p>
             {showAlert && (
@@ -300,13 +302,13 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
                                 parseInt(product.discount)
                               ).toFixed(2)} `}</span>
                             </Card.Subtitle>
-                            {product.discount != "" && (
+                            {/* {product.discount != "" && (
                               <Card.Subtitle className="mb-2 text-muted">
                                 <span style={{ color: "green" }}>
                                   {product.discount}% Discount
                                 </span>
                               </Card.Subtitle>
-                            )}
+                            )} */}
                             <Button variant="primary">
                               {product.qty} piece(s).
                             </Button>
@@ -319,7 +321,7 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
             </Row>
           </Container>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer style={{ backgroundColor: '#00ffbf' }}>
           <Button variant="secondary" onClick={handleOpenClose}>
             Close
           </Button>
@@ -327,6 +329,7 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
             Submit Order
           </Button>
         </Modal.Footer>
+       
       </Modal>
     </>
   );

@@ -30,10 +30,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.payload,
-        homeData: action.payload[0], // Assuming you want to set the first category as homeData
+        homeData: action.payload, // Assuming you want to set the first category as homeData
       };
     }
     case "CHANGE_INDEX":
+      
       return {
         ...state,
         currentCatIndex: action.payload,
