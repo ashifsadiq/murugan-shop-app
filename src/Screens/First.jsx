@@ -1,45 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Fireworks from '../Screens/Fireworks';
 import image from '../images/murganimage.jpg';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
+import './FirstPage.css'; // Create a CSS file for styling
+
 const FirstPage = () => {
     const navigate = useNavigate();
     const handle = () => {
         navigate('/home')
     }
 
+    useEffect(() => {
+        // Prevent scrolling when the component mounts
+        document.body.style.overflow = 'hidden';
+
+        // Re-enable scrolling when the component unmounts
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
+
     return (
-        <div style={{
-            position: 'relative',
-            minHeight: '100vh',
-        }}>
+        <div className="first-page-container">
             <Fireworks />
-            <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}>
+            <div className="content-container">
                 <div>
-                    <h4
-                        style={{
-                            textAlign: "center",
-                            color: "White",
-                            marginBottom: "50px",
-                            fontSize: "29px",
-                        }}>MURUGAN PATTASU KADAI</h4>
+                    <h4 className="title">MURUGAN PATTASU KADAI</h4>
                 </div>
-                <img src={image} alt="Image 4" height={400} />
-                <div style={{ textAlign: "center", height: '20', margin: 20 }}>
+                <img src={image} alt="Image 4" className="main-image" height={400}/>
+                <p>
+  60% offer is going now <br />
+  Place the order <br />
+  & <br />
+  Enjoy This Diwali with Murugan Pattasu Kadai
+</p>
+
+
+                <div className="button-container">
                     <Button variant="outline-light" className="responsive-button" onClick={handle}>
-                        <i className="bi bi-house-door"></i> Click
+                        <i className=""></i> Purchase Now
                     </Button>
                 </div>
             </div>

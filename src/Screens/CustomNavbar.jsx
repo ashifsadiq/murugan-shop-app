@@ -66,9 +66,9 @@ function CustomNavbar({ onOrderConform }) {
             <strong>RS.{TotalPrice}</strong>
           </Button>
           {""}
-          <Button variant="outline-light" className="me-3" onClick={handleShow}>
+          {/* <Button variant="outline-light" className="me-3" onClick={handleShow}>
             <i className="bi bi-arrow-right-circle"></i> More category
-          </Button>
+          </Button> */}
           <Button
             variant="outline-light"
             className="me-3"

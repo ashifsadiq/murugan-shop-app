@@ -1,4 +1,3 @@
-// components/Home.js
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, createData } from "../redux/action";
@@ -6,6 +5,7 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import CustomNavbar from "./CustomNavbar";
 import CartScreen from "./CartScreen";
+import './HomePage.css';
 
 const Home = () => {
   const homeData = useSelector((state) => state.homeData) || [];
@@ -33,21 +33,37 @@ const Home = () => {
             background-color: #ddd;
             color: white;
           }
+          .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #000000;
+            color: red;
+          }
+          .content-container {
+            margin-top: 100px;
+            overflow: hidden;
+          }
         `}
       </style>
-      <div className="col-md-12 px-0 py-0">
-        <div
-          className="py-2 px-2 marquee L"
-          style={{ backgroundColor: "#000000", color: "red" }}
-        >
-          <div className="marquee-content">60 % Discount</div>
-        </div>
-      </div>
-      <CustomNavbar onOrderConform={fetchData} />
 
-      <Container className="justify-content-md-center">
+      <div className="header">
+        <div className="col-md-12 p-5  px-0 py-0">
+          <div
+            className="py-2 px-2 marquee L"
+            style={{ backgroundColor: "#000000", color: "red" }}
+          >
+            <div className="marquee-content">60 % Discount</div>
+          </div>
+          <CustomNavbar onOrderConform={fetchData} />
+        </div>
+       
+      </div>
+      
+      <Container className="justify-content-md-center padding_top mt-5 m-5" style={{ marginTop: '20px' }}>
         {Array.isArray(homeData) && homeData.length > 0 ? (
-          currentCatIndex > 0 ? ( // Display a specific category
+          currentCatIndex > 0 ? (
             <React.Fragment>
               <h3
                 style={{
@@ -82,13 +98,6 @@ const Home = () => {
                             parseInt(item.discount)
                           ).toFixed(2)} `}</span>
                         </Card.Subtitle>
-                        {/* {item.discount !== "" && (
-                          <Card.Subtitle className="mb-2 text-muted">
-                            <span style={{ color: "green" }}>
-                              {item.discount}% Discount
-                            </span>
-                          </Card.Subtitle>
-                        )} */}
                         {item.qty <= 0 ? (
                           <Button
                             variant="primary"
@@ -144,7 +153,6 @@ const Home = () => {
               </Row>
             </React.Fragment>
           ) : (
-            // Display all categories
             homeData.map((category, catIndex) => (
               <React.Fragment key={catIndex}>
                 <div
@@ -201,13 +209,6 @@ const Home = () => {
                               parseFloat(item.discount)
                             ).toFixed(2)} `}</span>
                           </Card.Subtitle>
-                          {/* {item.discount !== "" && (
-                            <Card.Subtitle className="mb-2 text-muted">
-                              <span style={{ color: "green" }}>
-                                {item.discount}% Discount
-                              </span>
-                            </Card.Subtitle>
-                          )} */}
                           {item.qty <= 0 ? (
                             <Button
                               variant="primary"
