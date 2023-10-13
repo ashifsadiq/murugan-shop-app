@@ -5,7 +5,7 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import CustomNavbar from "./CustomNavbar";
 import CartScreen from "./CartScreen";
-import './HomePage.css';
+import "./HomePage.css";
 
 const Home = () => {
   const homeData = useSelector((state) => state.homeData) || [];
@@ -58,10 +58,12 @@ const Home = () => {
           </div>
           <CustomNavbar onOrderConform={fetchData} />
         </div>
-       
       </div>
-      
-      <Container className="justify-content-md-center padding_top mt-5 m-5" style={{ marginTop: '20px' }}>
+
+      <Container
+        className="justify-content-md-center padding_top mt-5"
+        style={{ marginTop: "20px" }}
+      >
         {Array.isArray(homeData) && homeData.length > 0 ? (
           currentCatIndex > 0 ? (
             <React.Fragment>
@@ -75,7 +77,11 @@ const Home = () => {
                 {homeData[currentCatIndex].category_eng_name}{" "}
                 {homeData[currentCatIndex].category_tam_name}
               </h3>
-              <Row className="justify-content-md-center" key={refresh}>
+              <Row className="justify-content-md-center" key={refresh} style={{
+                display:'flex',
+                justifyContent:'center',
+                alignItems:'center'
+              }}>
                 {homeData[currentCatIndex].products.map((item, index) => (
                   <Col xs={12} sm={6} md={4} lg={3} key={index}>
                     <Card style={{ width: "18rem", margin: 6 }}>
@@ -94,9 +100,9 @@ const Home = () => {
                             {item.price}
                           </span>
                           <span>{` ${(
-                            (parseInt(item.price) / 100) *
-                            parseInt(item.discount)
-                          ).toFixed(2)} `}</span>
+                            ((parseFloat(item.price) / 100) *
+                            parseFloat(item.discount)
+                          ))} `}</span>
                         </Card.Subtitle>
                         {item.qty <= 0 ? (
                           <Button
@@ -155,41 +161,51 @@ const Home = () => {
           ) : (
             homeData.map((category, catIndex) => (
               <React.Fragment key={catIndex}>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Image
-                    style={{
-                      borderRadius: 10,
-                      width: 100,
-                      height: 100,
-                      objectFit: "cover",
-                      margin: 10,
-                    }}
-                    src={
-                      "https://adminmurugan.ashifsadiq.in/CatImage/" +
-                      category.category_image
-                    }
-                    rounded
-                  />
-                  <h3
-                    style={{
-                      textAlign: "center",
-                      color: "black",
-                      fontFamily: "initial",
-                    }}
-                  >
-                    {category.category_eng_name} {category.category_tam_name}
-                  </h3>
-                </div>
-                <Row className="justify-content-md-center" key={refresh}>
+                <Row className="justify-content-md-center">
+                  <Col xs={12} sm={6} md={4} lg={3} style={{
+                    display:'flex',
+                    justifyContent:'center',
+                    alignItems:'center'
+                  }}>
+                    <Image
+                      style={{
+                        borderRadius: 10,
+                        width: 100,
+                        height: 100,
+                        objectFit: "cover",
+                        margin: 10,
+                      }}
+                      src={
+                        "https://adminmurugan.ashifsadiq.in/CatImage/" +
+                        category.category_image
+                      }
+                      rounded
+                    />
+                  </Col>
+                  <Col xs={12} sm={6} md={4} lg={3} style={{
+                    display:'flex',
+                    justifyContent:'center',
+                    alignItems:'center'
+                  }}>
+                    <h3
+                      style={{
+                        textAlign: "center",
+                        color: "black",
+                        fontFamily: "initial",
+                      }}
+                    >
+                      {category.category_eng_name} {category.category_tam_name}
+                    </h3>
+                  </Col>
+                </Row>
+                <Row className="justify-content-md-center" style={{
+                  display:'flex',
+                  justifyContent:'center',
+                  alignItems:'center'
+                }}>
                   {category.products.map((item, index) => (
                     <Col xs={12} sm={6} md={4} lg={3} key={index}>
-                      <Card style={{ width: "18rem", margin: 6 }}>
+                      <Card style={{ width: "18rem", margin: 6 }}  className="justify-content-md-center">
                         <Card.Body>
                           <Card.Title>{item.english_name}</Card.Title>
                           <Card.Subtitle className="mb-2 text-muted">
@@ -204,10 +220,10 @@ const Home = () => {
                             >
                               {item.price}
                             </span>
-                            <span>{` ${(
+                            <span>{` ${Math.round(
                               (parseFloat(item.price) / 100) *
                               parseFloat(item.discount)
-                            ).toFixed(2)} `}</span>
+                            )} `}</span>
                           </Card.Subtitle>
                           {item.qty <= 0 ? (
                             <Button

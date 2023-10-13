@@ -102,7 +102,7 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
         }
       })
     );
-    setPrice(tempPrice);
+    setPrice((tempPrice));
     setCount(tempQty);
   }, [data]);
   return (
@@ -275,7 +275,7 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
                 </InputGroup>
               </Col>
             </Row>
-            {(count>0 && price>0) && <h3>{count} items | Rs.{price}</h3>}
+            {(count>0 && price>0) && <h3>{count} items | Rs.{Math.round(price)}</h3>}
             <Row className="">
               {data.map((item, index) =>
                 item.products.map(
@@ -297,10 +297,10 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
                               >
                                 {product.price}
                               </span>
-                              <span style={{ color: "#000" }}>{` ${(
-                                (parseInt(product.price) / 100) *
-                                parseInt(product.discount)
-                              ).toFixed(2)} `}</span>
+                              <span style={{ color: "#000" }}>{` ${Math.round(
+                                (parseFloat(product.price) / 100) *
+                                parseFloat(product.discount)
+                              )} `}</span>
                             </Card.Subtitle>
                             {/* {product.discount != "" && (
                               <Card.Subtitle className="mb-2 text-muted">

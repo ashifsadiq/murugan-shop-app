@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Fireworks from '../Screens/Fireworks';
-import image from '../images/murganimage.jpg';
+import image from '../images/murganimage.jpeg';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import './FirstPage.css'; // Create a CSS file for styling

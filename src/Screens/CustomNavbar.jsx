@@ -37,9 +37,9 @@ function CustomNavbar({ onOrderConform }) {
           const productTotal =
             product.qty *
             (
-              (parseInt(product.price) / 100) *
-              parseInt(product.discount)
-            ).toFixed(2);
+              (parseFloat(product.price) / 100) *
+              parseFloat(product.discount)
+            );
           totalPrice += productTotal;
         }
       });
@@ -56,51 +56,63 @@ function CustomNavbar({ onOrderConform }) {
         onOrderConform={onOrderConform}
       />
       <Gallery setShowGallery={setShowGallery} showGallery={showGallery} />
-      <Container>
+      <Container style={{
+        display:'flex'
+      }}>
+
         <Navbar.Brand href="/" style={{ fontFamily: "revert-layer" }}>
           {BRAND_NAME}
         </Navbar.Brand>
-        <div className="d-flex">
-          <Button variant="outline-light" className="me-3" onClick={handleCart}>
-            <i className="bi bi-bag-fill"></i> Cart {count > 0 && count} |{" "}
-            <strong>RS.{TotalPrice}</strong>
-          </Button>
-          {""}
-          {/* <Button variant="outline-light" className="me-3" onClick={handleShow}>
+        <div style={{flex:10}} />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <div className="d-flex">
+            <Button
+              variant="outline-light"
+              className="me-3"
+              onClick={handleCart}
+            >
+              <i className="bi bi-bag-fill"></i> Cart {count > 0 && count} |{" "}
+              <strong>RS.{Math.round(TotalPrice)}</strong>
+            </Button>
+            {""}
+            {/* <Button variant="outline-light" className="me-3" onClick={handleShow}>
             <i className="bi bi-arrow-right-circle"></i> More category
           </Button> */}
-          <Button
-            variant="outline-light"
-            className="me-3"
-            onClick={handleGallery}
-          >
-            Gallery
-          </Button>
-          <Button
-            variant="outline-light"
-            className="me-3"
-            onClick={handleAbout}
-          >
-            <i className="bi bi-info-circle"></i> About
-          </Button>
-          <a
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-            href="https://wa.me/+918754822546?text=Hi, I like to celebrate this Diwali with Murugan crackers and I have something to clarify with you! Reply me"
-            target="_blank"
-          >
-            <img
-              src={require("../images/WhatsApp_icon.png")}
-              width={25}
-              style={{
-                objectFit: "contain",
-              }}
-            />
-          </a>
-        </div>
+            <Button
+              variant="outline-light"
+              className="me-3"
+              onClick={handleGallery}
+            >
+              Gallery
+            </Button>
+            <Button
+              variant="outline-light"
+              className="me-3"
+              onClick={handleAbout}
+            >
+              <i className="bi bi-info-circle"></i> About
+            </Button>
+            <Button
+              variant="outline-light"
+              className="me-3"
+              onClick={() =>
+                window.open(
+                  "https://wa.me/+917010448281?text=Hi, I like to celebrate this Diwali with Murugan crackers and I have something to clarify with you! Reply me",
+                  "_blank"
+                )
+              }
+            >
+              <img
+                src={require("../images/WhatsApp_icon.png")}
+                width={25}
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+            </Button>
+          </div>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
