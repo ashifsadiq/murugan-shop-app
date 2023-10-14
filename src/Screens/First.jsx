@@ -26,16 +26,9 @@ const FirstPage = () => {
         <div className="first-page-container">
             <Fireworks />
             <div className="content-container">
-                <div>
-                    <h4 className="title">MURUGAN PATTASU KADAI</h4>
-                </div>
-                <img src={image} alt="Image 4" className="main-image" height={400}/>
-                <p>
-  60% offer is going now <br />
-  Place the order <br />
-  & <br />
-  Enjoy This Diwali with Murugan Pattasu Kadai
-</p>
+               
+                <img src={image} alt="Image 4" className="main-image" />
+               
 
 
                 <div className="button-container">

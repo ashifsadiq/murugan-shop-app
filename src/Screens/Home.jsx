@@ -54,7 +54,7 @@ const Home = () => {
             className="py-2 px-2 marquee L"
             style={{ backgroundColor: "#000000", color: "red" }}
           >
-            <div className="marquee-content">60 % Discount</div>
+            <div className="marquee-content">60 % Discount Is Going Now  Place The Order & Enjoy This Diwali with Murugan Pattasu Kadai</div>
           </div>
           <CustomNavbar onOrderConform={fetchData} />
         </div>
