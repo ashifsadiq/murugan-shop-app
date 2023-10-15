@@ -25,6 +25,9 @@ function CustomNavbar({ onOrderConform }) {
   const handleAbout = () => {
     navigate("/about");
   };
+  const handledoanddont = () => {
+    navigate("/DoandDont");
+  };
 
   useEffect(() => {
     let temp = 0;
@@ -85,6 +88,13 @@ function CustomNavbar({ onOrderConform }) {
               onClick={handleGallery}
             >
               Gallery
+            </Button>
+            <Button
+              variant="outline-light"
+              className="me-3"
+              onClick={handledoanddont}
+            >
+              Do's and Don’ts
             </Button>
             <Button
               variant="outline-light"
