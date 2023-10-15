@@ -94,7 +94,7 @@ function CustomNavbar({ onOrderConform }) {
               className="me-3"
               onClick={handledoanddont}
             >
-              Do's and Don’ts
+              Do's & Don’ts
             </Button>
             <Button
               variant="outline-light"
