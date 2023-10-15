@@ -4,3 +4,12 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.page_image {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  

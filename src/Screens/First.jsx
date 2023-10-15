@@ -23,7 +23,7 @@ const FirstPage = () => {
     }, []);
 
     return (
-        <div className="first-page-container">
+        <div className="first-page-container ">
             <Fireworks />
             <div className="content-container">
                

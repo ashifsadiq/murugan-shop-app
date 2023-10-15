@@ -51,7 +51,7 @@ function CustomNavbar({ onOrderConform }) {
     setCount(temp);
   }, [data]);
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar  style={{ backgroundColor: "#701f47" }}  expand="lg">
       <SideBar show={openSideBase} setOpenSideBase={setOpenSideBase} />
       <CartScreen
         showCart={showCart}
@@ -63,13 +63,13 @@ function CustomNavbar({ onOrderConform }) {
         display:'flex'
       }}>
 
-        <Navbar.Brand href="/" style={{ fontFamily: "revert-layer" }}>
+        <Navbar.Brand href="/" style={{ fontFamily: "revert-layer" ,color:"#ddd" }}>
           {BRAND_NAME}
         </Navbar.Brand>
         <div style={{flex:10}} />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <div className="d-flex">
+        <Navbar.Collapse id="basic-navbar-nav ">
+          <div className="d-flex"  >
             <Button
               variant="outline-light"
               className="me-3"

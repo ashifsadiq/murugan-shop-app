@@ -7,6 +7,9 @@ import CustomNavbar from "./CustomNavbar";
 import CartScreen from "./CartScreen";
 import "./HomePage.css";
 
+import img1 from "../images/diwalisale.png";
+
+
 const Home = () => {
   const homeData = useSelector((state) => state.homeData) || [];
   const currentCatIndex = useSelector((state) => state.currentCatIndex);
@@ -30,7 +33,7 @@ const Home = () => {
       <style>
         {`
           body {
-            background-color: #ddd;
+            background-color: #dbc5d0;
             color: white;
           }
           .header {
@@ -64,6 +67,10 @@ const Home = () => {
         className="justify-content-md-center padding_top mt-5"
         style={{ marginTop: "20px" }}
       >
+        <div >
+          <img src={img1} className="page_image"></img>
+        </div>
+
         {Array.isArray(homeData) && homeData.length > 0 ? (
           currentCatIndex > 0 ? (
             <React.Fragment>
@@ -99,7 +106,7 @@ const Home = () => {
                               </span>
                               <span>{` ${(
                                 ((parseFloat(item.price) / 100) *
-                                parseFloat(item.discount))
+                                  parseFloat(item.discount))
                               )} `}</span>
                             </Card.Subtitle>
                             {item.qty <= 0 ? (
@@ -151,16 +158,14 @@ const Home = () => {
                               </React.Fragment>
                             )}
                           </div>
-                          <div style={{ flex: 1 }}>
+                          <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <Image
-                              src={
-                                "https://adminmurugan.ashifsadiq.in/CatImage/" +
-                                item.category_image
-                              }
+                              src={"https://adminmurugan.ashifsadiq.in/CatImage/" + item.category_image}
                               fluid
                               style={{ objectFit: "cover" }}
                             />
                           </div>
+
                         </div>
                       </Card.Body>
                     </Card>
