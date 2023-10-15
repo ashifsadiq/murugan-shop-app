@@ -13,8 +13,8 @@
 }
 
 .main-image {
-  max-width: 80vw; 
-  max-height: 80vh;
+  max-width: 100vw; 
+  max-height: 90vh;
   width: auto; /* Maintain aspect ratio */
   height: auto; /* Maintain aspect ratio */
 }

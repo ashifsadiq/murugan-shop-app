@@ -45,7 +45,7 @@ const Gallery = ({ setShowGallery, showGallery }) => {
                         margin:10
                       }}
                     />
-                    <span style={{ color: "#000", textAlign: "center" }}>
+                    <span style={{ color: "#000", textAlign: "center",fontWeight:"bold" }}>
                     {item.category_eng_name}
                   </span>
                   </Card>
