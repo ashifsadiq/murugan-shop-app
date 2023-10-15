@@ -6,11 +6,10 @@ import { Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import './FirstPage.css'; // Create a CSS file for styling
 
+import img1 from "../images/diwalisale.png";
+
 const FirstPage = () => {
     const navigate = useNavigate();
-    const handle = () => {
-        navigate('/home')
-    }
 
     useEffect(() => {
         // Prevent scrolling when the component mounts
@@ -22,17 +21,18 @@ const FirstPage = () => {
         };
     }, []);
 
+    const handle = () => {
+        navigate('/home');
+    }
+
     return (
-        <div className="first-page-container ">
+        <div className="first-page-container">
             <Fireworks />
             <div className="content-container">
-               
+               <img src={img1} alt="Diwali Sale Banner" className="sale-banner" />
                 <img src={image} alt="Image 4" className="main-image" />
-               
-
-
                 <div className="button-container">
-                    <Button variant="outline-light" className="responsive-button" onClick={handle}>
+                    <Button variant="outline-light" className="responsive-button btn-lg" onClick={handle}>
                         <i className=""></i> Purchase Now
                     </Button>
                 </div>
