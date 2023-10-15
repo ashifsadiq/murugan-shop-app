@@ -29,7 +29,7 @@ const FirstPage = () => {
         <div className="first-page-container">
             <Fireworks />
             <div className="content-container">
-               <img src={img1} alt="Diwali Sale Banner" className="sale-banner" />
+               {/* <img src={img1} alt="Diwali Sale Banner" className="sale-banner" /> */}
                 <img src={image} alt="Image 4" className="main-image" />
                 <div className="button-container">
                     <Button variant="outline-light" className="responsive-button btn-lg" onClick={handle}>
