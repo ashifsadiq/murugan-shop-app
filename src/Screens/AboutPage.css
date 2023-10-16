@@ -26,6 +26,7 @@
 .about-heading {
   font-size: 2rem;
   margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .description {
@@ -36,6 +37,9 @@
 .about-info {
   font-size: 1rem;
   margin-bottom: 10px;
+  color: #4f4cf4;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 @media screen and (max-width: 768px) {
@@ -50,4 +54,10 @@
   .about-info {
     font-size: 0.9rem;
   }
+}
+.instagram-icon {
+  color: #bc2a8d; 
+}
+.instagram-link {
+  text-decoration: none;
 }

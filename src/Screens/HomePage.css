@@ -11,5 +11,9 @@
     justify-content: center;
     align-items: center;
 }
+.card-body {
+    background: linear-gradient(to right, #babe07, #df841b);
 
+  }
+  
   

@@ -29,8 +29,8 @@ const FirstPage = () => {
         <div className="first-page-container">
             <Fireworks />
             <div className="content-container">
-               <img src={img1} alt="Diwali Sale Banner" className="sale-banner" />
-                <img src={image} alt="Image 4" className="main-image" />
+               <img src={img1} alt="Diwali Sale Banner" className="sale-banner m-2 p-4" />
+                <img src={image} alt="Image 4" className="main-image m-2 p-1" />
                 <div className="button-container">
                     <Button variant="outline-light" className="responsive-button btn-lg" onClick={handle}>
                         <i className=""></i> Purchase Now

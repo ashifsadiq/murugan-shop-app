@@ -1,54 +1,58 @@
+/* Add this to your DoandDont.css file */
+
 /* Container Styles */
 ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 10px;
-  }
-  
-  /* Do's and Don'ts Styles */
+  list-style-type: none;
+  padding: 0;
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Do's and Don'ts Styles */
+ul > li > strong {
+  font-size: 1.2em;
+  color: #007bff; /* Blue color for emphasis */
+}
+
+/* Do's and Don'ts List Styles */
+ul > li > ul {
+  list-style-type: circle;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* List Item Styles */
+ul > li > ul > li {
+  margin-bottom: 5px;
+}
+
+/* Additional Styles (Optional) */
+ul > li > ul > li:before {
+  content: "•"; /* Custom bullet character */
+  color: #007bff; /* Match the emphasis color */
+  font-size: 0.8em;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Hover Effect (Optional) */
+ul > li > ul > li:hover {
+  color: #007bff; /* Change color on hover */
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
   ul > li > strong {
-    font-size: 1.2em;
-    color: #007bff; /* Blue color for emphasis */
+    font-size: 1em; /* Adjust font size for smaller screens */
   }
-  
-  /* Do's and Don'ts List Styles */
   ul > li > ul {
-    list-style-type: circle;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    list-style-type: disc; /* Change list style for smaller screens */
   }
-  
-  /* List Item Styles */
-  ul > li > ul > li {
-    margin-bottom: 5px;
-  }
-  
-  /* Additional Styles (Optional) */
-  ul > li > ul > li:before {
-    content: "•"; /* Custom bullet character */
-    color: #007bff; /* Match the emphasis color */
-    font-size: 0.8em;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-  }
-  
-  /* Hover Effect (Optional) */
-  ul > li > ul > li:hover {
-    color: #007bff; /* Change color on hover */
-    cursor: pointer;
-  }
-  
-  /* Responsive Styles */
-  @media screen and (max-width: 768px) {
-    ul > li > strong {
-      font-size: 1em; /* Adjust font size for smaller screens */
-    }
-    ul > li > ul {
-      list-style-type: disc; /* Change list style for smaller screens */
-    }
-  }
-  
+}
