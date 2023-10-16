@@ -7,7 +7,7 @@ import CustomNavbar from "./CustomNavbar";
 import CartScreen from "./CartScreen";
 import "./HomePage.css";
 
-import img1 from "../images/diwalisale.png";
+import img1 from "../images/sale.jpg";
 
 
 const Home = () => {
@@ -27,7 +27,7 @@ const Home = () => {
   useEffect(() => {
     fetchData();
   }, [currentCatIndex]);
-
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   return (
     <React.Fragment>
       <style>
@@ -68,7 +68,7 @@ const Home = () => {
         style={{ marginTop: "20px" }}
       >
         <div >
-          <img src={img1} className="page_image"></img>
+          <img src={img1} className="page_image p-2"></img>
         </div>
 
         {Array.isArray(homeData) && homeData.length > 0 ? (

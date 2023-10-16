@@ -50,6 +50,8 @@ function CustomNavbar({ onOrderConform }) {
     setTotalPrice(totalPrice);
     setCount(temp);
   }, [data]);
+
+  
   return (
     <Navbar  style={{ backgroundColor: "#701f47" }}  expand="lg">
       <SideBar show={openSideBase} setOpenSideBase={setOpenSideBase} />
