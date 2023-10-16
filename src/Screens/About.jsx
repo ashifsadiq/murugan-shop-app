@@ -31,6 +31,12 @@ const AboutPage = () => {
                 </p>
                 <h5 className="about-info"><i className="bi bi-shop"></i> BRANCH: GANESHAPURAM, KOVILPALAYAM & NEELAMBUR.</h5>
                 <h5 className="about-info"><i className="bi bi-phone"></i> CONTACT: 80126 41274 | 96886 20121 | 94888 83399</h5>
+                <h5 className="about-info">
+  <a href="https://www.instagram.com/muruganpattasukadai/" target="_blank" rel="noopener noreferrer">
+    <i className="bi bi-instagram"></i> Instagram
+  </a>
+</h5>
+
             </div>
         </div>
     );

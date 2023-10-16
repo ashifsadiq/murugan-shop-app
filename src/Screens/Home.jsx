@@ -270,7 +270,7 @@ const Home = () => {
                                 </React.Fragment>
                               )}
                             </div>
-                            {/* <div style={{ flex: 1 }}>
+                            <div style={{ flex: 1 }}>
                               <Image
                                 src={
                                   "https://source.unsplash.com/random/800x600" +
@@ -279,7 +279,7 @@ const Home = () => {
                                 fluid
                                 style={{ objectFit: "cover" }}
                               />
-                            </div> */}
+                            </div>
                           </div>
                         </Card.Body>
                       </Card>
