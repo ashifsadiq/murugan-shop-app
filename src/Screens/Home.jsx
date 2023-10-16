@@ -292,6 +292,10 @@ const Home = () => {
         ) : (
           <div>No data available.</div>
         )}
+        <div style={{ textAlign: 'center' }}>
+  <button className="btn btn-primary p-2 m-2">Submit</button>
+</div>
+
       </Container>
     </React.Fragment>
   );
