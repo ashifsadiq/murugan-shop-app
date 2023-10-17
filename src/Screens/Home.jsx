@@ -9,12 +9,12 @@ import "./HomePage.css";
 
 import img1 from "../images/sale.jpg";
 
-
 const Home = () => {
   const homeData = useSelector((state) => state.homeData) || [];
   const currentCatIndex = useSelector((state) => state.currentCatIndex);
   const dispatch = useDispatch();
   const [refresh, setRefresh] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   const fetchData = () => {
     fetch("https://adminmurugan.ashifsadiq.in/api/products_with_categories.php")
@@ -52,14 +52,16 @@ const Home = () => {
   `}
       </style>
 
-
       <div className="header">
         <div className="col-md-12 p-5  px-0 py-0">
           <div
             className="py-2 px-2 marquee L"
             style={{ backgroundColor: "#000000", color: "red" }}
           >
-            <div className="marquee-content">Discount Is Going Now Place The Order & Enjoy This Diwali with Murugan Pattasu Kadai</div>
+            <div className="marquee-content">
+              Discount Is Going Now Place The Order & Enjoy This Diwali with
+              Murugan Pattasu Kadai
+            </div>
           </div>
           <CustomNavbar onOrderConform={fetchData} />
         </div>
@@ -69,7 +71,7 @@ const Home = () => {
         className="justify-content-md-center padding_top mt-5"
         style={{ marginTop: "20px" }}
       >
-        <div >
+        <div>
           <img src={img1} className="page_image p-2"></img>
         </div>
 
@@ -106,10 +108,10 @@ const Home = () => {
                               >
                                 {item.price}
                               </span>
-                              <span>{` ${(
-                                ((parseFloat(item.price) / 100) *
-                                  parseFloat(item.discount))
-                              )} `}</span>
+                              <span>{` ${
+                                (parseFloat(item.price) / 100) *
+                                parseFloat(item.discount)
+                              } `}</span>
                             </Card.Subtitle>
                             {item.qty <= 0 ? (
                               <Button
@@ -160,14 +162,23 @@ const Home = () => {
                               </React.Fragment>
                             )}
                           </div>
-                          <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                          <div
+                            style={{
+                              flex: 1,
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                            }}
+                          >
                             <Image
-                              src={"https://adminmurugan.ashifsadiq.in/CatImage/" + item.category_image}
+                              src={
+                                "https://adminmurugan.ashifsadiq.in/CatImage/" +
+                                item.category_image
+                              }
                               fluid
                               style={{ objectFit: "cover" }}
                             />
                           </div>
-
                         </div>
                       </Card.Body>
                     </Card>
@@ -229,7 +240,7 @@ const Home = () => {
                                 </span>
                                 <span>{` ${Math.round(
                                   (parseFloat(item.price) / 100) *
-                                  parseFloat(item.discount)
+                                    parseFloat(item.discount)
                                 )} `}</span>
                               </Card.Subtitle>
                               {item.qty <= 0 ? (
@@ -250,7 +261,10 @@ const Home = () => {
                                     variant="primary"
                                     onClick={() => {
                                       dispatch(
-                                        decrement({ cat: catIndex, item: index })
+                                        decrement({
+                                          cat: catIndex,
+                                          item: index,
+                                        })
                                       );
                                       setRefresh((b) => !b);
                                     }}
@@ -262,7 +276,10 @@ const Home = () => {
                                     variant="primary"
                                     onClick={() => {
                                       dispatch(
-                                        increment({ cat: catIndex, item: index })
+                                        increment({
+                                          cat: catIndex,
+                                          item: index,
+                                        })
                                       );
                                       setRefresh((b) => !b);
                                     }}
@@ -294,10 +311,22 @@ const Home = () => {
         ) : (
           <div>No data available.</div>
         )}
-        <div style={{ textAlign: 'center' }}>
-          <button className="btn btn-primary p-2 m-2">Submit</button>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Button variant="primary" onClick={() => setShowCart((e) => !e)}>
+            Submit
+          </Button>
         </div>
-
+        <CartScreen
+          showCart={showCart}
+          setShowCart={setShowCart}
+          onOrderConform={() => fetchData()}
+        />
       </Container>
     </React.Fragment>
   );
