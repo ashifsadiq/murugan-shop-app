@@ -55,9 +55,9 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
       userInput.state != undefined &&
       userInput.name != undefined &&
       userInput.number != undefined &&
-      userInput.email != undefined &&
+      // userInput.email != undefined &&
+      // userInput.alt_number != undefined &&
       userInput.city != undefined &&
-      userInput.alt_number != undefined &&
       userInput.address != undefined &&
       userInput.pin != undefined
     ) {
