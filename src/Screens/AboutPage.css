@@ -4,9 +4,9 @@
   align-items: center;
   text-align: center;
   position: relative;
-    
   color: white;
 }
+
 .fireworks-container {
   position: absolute;
   top: 0;
@@ -20,7 +20,7 @@
   max-width: 800px;
   padding: 20px;
   position: relative;
-    z-index: 1;
+  z-index: 1;
 }
 
 .about-heading {
@@ -29,8 +29,9 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-.description {
-  font-size: 1.2rem;
+.about-image {
+  max-width: 100%;
+  height: auto;
   margin-bottom: 20px;
 }
 
@@ -47,17 +48,15 @@
     font-size: 1.5rem;
   }
 
-  .description {
-    font-size: 1rem;
-  }
-
   .about-info {
     font-size: 0.9rem;
   }
 }
+
 .instagram-icon {
   color: #bc2a8d; 
 }
+
 .instagram-link {
   text-decoration: none;
 }

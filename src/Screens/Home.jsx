@@ -33,10 +33,11 @@ const Home = () => {
       <style>
         {`
     body {
-      background: rgb(50,10,85);
-      background: linear-gradient(116deg, rgba(50,10,85,1) 0%, rgba(168,97,161,1) 27%, rgba(170,155,103,1) 51%, rgba(162,105,120,1) 59%, rgba(97,13,61,1) 79%, rgba(59,5,51,1) 96%, rgba(95,61,95,1) 100%);
-      color: white;
-    }
+      background: rgb(108,213,212);
+background: -moz-linear-gradient(90deg, rgba(108,213,212,1) 1%, rgba(139,168,93,1) 10%, rgba(121,120,198,1) 30%, rgba(105,175,180,1) 44%, rgba(97,246,94,1) 58%, rgba(138,212,205,1) 71%, rgba(188,152,189,1) 84%, rgba(133,119,131,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(108,213,212,1) 1%, rgba(139,168,93,1) 10%, rgba(121,120,198,1) 30%, rgba(105,175,180,1) 44%, rgba(97,246,94,1) 58%, rgba(138,212,205,1) 71%, rgba(188,152,189,1) 84%, rgba(133,119,131,1) 100%);
+background: linear-gradient(90deg, rgba(108,213,212,1) 1%, rgba(139,168,93,1) 10%, rgba(121,120,198,1) 30%, rgba(105,175,180,1) 44%, rgba(97,246,94,1) 58%, rgba(138,212,205,1) 71%, rgba(188,152,189,1) 84%, rgba(133,119,131,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6cd5d4",endColorstr="#857783",GradientType=1);  }
     .header {
       position: fixed;
       top: 0;
@@ -53,14 +54,21 @@ const Home = () => {
       </style>
 
       <div className="header">
-        <div className="col-md-12 p-5  px-0 py-0">
+        <div className="col-md-12 p-5 px-0 py-0">
           <div
             className="py-2 px-2 marquee L"
-            style={{ backgroundColor: "#000000", color: "red" }}
+            style={{
+              backgroundColor: "#000000",
+              color: "red",
+              whiteSpace: "nowrap",
+              textOverflow: "ellipsis",
+            }}
           >
-            <div className="marquee-content">
-              Discount Is Going Now Place The Order & Enjoy This Diwali with
-              Murugan Pattasu Kadai
+            <div
+              className="marquee-content"
+              style={{ whiteSpace: "nowrap", textOverflow: "clip" }}
+            >
+              "Diwali Discount 40-85 % Alert! Order now!"
             </div>
           </div>
           <CustomNavbar onOrderConform={fetchData} />
@@ -82,7 +90,7 @@ const Home = () => {
                 style={{
                   textAlign: "center",
                   color: "black",
-                  fontFamily: "initial",
+                  fontFamily: "Times New Roman, serif",
                 }}
               >
                 {homeData[currentCatIndex].category_eng_name}{" "}
@@ -95,7 +103,7 @@ const Home = () => {
                       <Card.Body>
                         <div style={{ display: "flex" }}>
                           <div style={{ flex: 1 }}>
-                            <Card.Title>{item.english_name}</Card.Title>
+                            <Card.Title>{item.english_name} </Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">
                               {item.tamil_name}
                             </Card.Subtitle>

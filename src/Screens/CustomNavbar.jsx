@@ -65,7 +65,7 @@ function CustomNavbar({ onOrderConform }) {
         display:'flex'
       }}>
 
-        <Navbar.Brand href="/" style={{ fontFamily: "revert-layer" ,color:"#ddd" }}>
+        <Navbar.Brand href="/" style={{ fontFamily: "Times New Roman, serif",fontSize:"25px" ,color:"#FFD700" }}>
           {BRAND_NAME}
         </Navbar.Brand>
         <div style={{flex:10}} />
