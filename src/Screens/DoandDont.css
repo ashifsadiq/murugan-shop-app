@@ -4,7 +4,7 @@
 ul {
   list-style-type: none;
   padding: 0;
-  background-color: #f8f9fa; /* Light gray background */
+  background-color: #72b3f4; /* Light gray background */
   padding: 20px;
   border-radius: 10px;
 }
@@ -16,7 +16,7 @@ li {
 /* Do's and Don'ts Styles */
 ul > li > strong {
   font-size: 1.2em;
-  color: #007bff; /* Blue color for emphasis */
+  color: #1c62ac; /* Blue color for emphasis */
 }
 
 /* Do's and Don'ts List Styles */
@@ -46,7 +46,9 @@ ul > li > ul > li:hover {
   color: #007bff; /* Change color on hover */
   cursor: pointer;
 }
-
+/* div{
+  background-color: #ddd;
+} */
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   ul > li > strong {

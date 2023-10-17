@@ -86,16 +86,30 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6cd5d4",endCo
         {Array.isArray(homeData) && homeData.length > 0 ? (
           currentCatIndex > 0 ? (
             <React.Fragment>
-              <h3
-                style={{
-                  textAlign: "center",
-                  color: "black",
-                  fontFamily: "Times New Roman, serif",
-                }}
-              >
-                {homeData[currentCatIndex].category_eng_name}{" "}
-                {homeData[currentCatIndex].category_tam_name}
-              </h3>
+              <div >
+                <div>
+                  <h3
+                    style={{
+                      color: "black",
+                      fontFamily: "Times New Roman, serif",
+                      
+                    }}
+                  >
+                    ({homeData[currentCatIndex].category_tam_name})
+                  </h3>
+                </div>
+                <div>
+                  <h4
+                    style={{
+                      color: "black",
+                      fontFamily: "Times New Roman, serif",
+                    }}
+                  >
+                    {homeData[currentCatIndex].category_eng_name}
+                  </h4>
+                </div>
+              </div>
+
               <Row className="justify-content-md-center" key={refresh}>
                 {homeData[currentCatIndex].products.map((item, index) => (
                   <Col xs={12} sm={6} md={4} lg={3} key={index}>

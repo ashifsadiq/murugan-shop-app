@@ -33,7 +33,31 @@
 .about-image {
   max-width: 100%;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+ul {
+  list-style-type: none !important;
+  padding: 0;
+  background-color: transparent !important;
+ 
+}
+
+.contact{
+  background-color: white;
+  
+}
+
+.contact_content{
+color: #000000;
+font-size: 20px;
+font-weight: bold;
+}
+
+li {
+  font-size: 18px;
+  color: #4f4cf4 !important;
+  font-family: Arial, sans-serif; /* Specify your preferred font */
+  margin-bottom: 10px; /* Add space between list items */
 }
 
 .about-info {

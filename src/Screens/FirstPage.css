@@ -1,31 +1,50 @@
-.first-page-container {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-.content-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.sale-banner {
-  width: 100%;
+.sale-banner,
+.small-banner {
   max-width: 100%;
   height: auto;
-}
-
-.main-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: 80vh; /* Adjusted max height */
+  max-height: 80vh; /* Set the maximum height if needed */
 }
 
 .button-container {
-  margin-top: 10px;
+  position: absolute;
+  padding: 5px;
+  margin: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-color:  rgb(126,7,128);
+  background: -moz-linear-gradient(90deg, rgba(126,7,128,1) 12%, rgba(87,10,10,1) 99%);
+  background: -webkit-linear-gradient(90deg, rgba(126,7,128,1) 12%, rgba(87,10,10,1) 99%);
+  background: linear-gradient(90deg, rgba(126,7,128,1) 12%, rgba(87,10,10,1) 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7e0780",endColorstr="#570a0a",GradientType=1);
+  color: black;
+  border-radius: 10px;
+}
+
+.small-banner {
+  max-width: 100%;
+  height: 20vh;
+}
+
+.image-container {
+  display: flex;
+}
+
+/* Media query for smaller screens (adjust as needed) */
+@media screen and (max-width: 768px) {
+  .button-container {
+    font-size: 20px;
+  }
+}
+
+/* Media query for even smaller screens (adjust as needed) */
+@media screen and (max-width: 480px) {
+  .button-container {
+    font-size: 16px;
+  }
 }

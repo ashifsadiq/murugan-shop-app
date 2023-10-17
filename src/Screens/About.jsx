@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Fireworks from "../Screens/Fireworks";
 import "./AboutPage.css";
 import img1 from "../images/about us.jpg";
+import img2 from "../images/edited - about us.jpg";
 
 const AboutPage = () => {
   useEffect(() => {
@@ -19,18 +20,22 @@ const AboutPage = () => {
       </div>
       <div className="about-content">
         <h3 className="about-heading">About us</h3>
-        <div>
-          <p className="about-heading">MURUGAN PATTASU KADAI</p>
-        </div>
         <img src={img1} alt="About Us" className="about-image" />
-        <h5 className="about-info">
-          <i className="bi bi-shop"></i> BRANCH: GANESHAPURAM, KOVILPALAYAM &
-          NEELAMBUR.
-        </h5>
-        <h5 className="about-info">
-          <i className="bi bi-phone"></i> CONTACT: 80126 41274 | 96886 20121 |
-          94888 83399
-        </h5>
+        <div>
+          <h1 className="bi bi-shop"> BRANCH</h1>
+          <ul className="custom-bullet-list">
+            <li>GANESHAPURAM</li>
+            <li>KOVILPALAYAM &</li>
+            <li>NEELAMBUR</li>
+          </ul>
+          <div className="contact">
+          <h5 className="contact_content">
+            <i className="bi bi-phone" style={{ fontWeight: 'bold'   }}></i> CONTACT: 80126 41274 |<br /> 96886 20121 |
+            94888 83399
+          </h5>
+        </div>
+        </div>
+      
         <h5 className="about-info">
           <a
             href="https://www.instagram.com/muruganpattasukadai/"
