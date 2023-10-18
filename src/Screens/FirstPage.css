@@ -48,3 +48,30 @@
     font-size: 16px;
   }
 }
+@media screen and (min-width: 701px) {
+  .sale-banner,
+  .small-banner {
+    max-width: 800px; /* Set maximum width for larger screens */
+    width: 100%; /* Ensure the image takes up the available width */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+@media screen and (min-width: 801px) {
+  .sale-banner,
+  .small-banner {
+    max-width: 800px; /* Set maximum width for larger screens */
+    width: 100%; /* Ensure the image takes up the available width */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 100px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .sale-banner,
+  .small-banner {
+    max-width: 1000px; /* Set maximum width for larger screens */
+    width: 100%; /* Ensure the image takes up the available width */
+    height: auto; /* Maintain aspect ratio */
+    /* margin-left: 100px; */
+  }
+}
