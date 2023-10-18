@@ -113,17 +113,15 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
         fullscreen={true}
         autoFocus
       >
-        <Modal.Header closeButton style={{ backgroundColor: '#00ffbf' }}>
+        <Modal.Header  style={{ backgroundColor: '#00ffbf' }}>
           <Modal.Title style={{color:'black'}}>Ready To Check Out ! </Modal.Title>
+          <Button variant="secondary" onClick={()=>setShowCart(false)}>
+            Back
+          </Button>
         </Modal.Header>
         <Modal.Body style={{ backgroundColor: '#00ffbf' }}>
           <Container>
-            <p style={{color:"#f00", textAlign:'center'}}>{errorText}</p>
-            {showAlert && (
-              <p style={{ color: "#f00", textAlign: "center" }}>
-                Please fill all the delivery details
-              </p>
-            )}
+           
             <Row>
               <Col>
                 <InputGroup
@@ -273,7 +271,14 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
                     ))}
                   </Form.Control>
                 </InputGroup>
+         
               </Col>
+                     <p style={{color:"#f00", textAlign:'center'}}>{errorText}</p>
+            {showAlert && (
+              <p style={{ color: "#f00", textAlign: "center" }}>
+                Please fill all the delivery details
+              </p>
+            )}
             </Row>
             {(count>0 && price>0) && <h3>{count} items | Rs.{Math.round(price)}</h3>}
             <Row className="">

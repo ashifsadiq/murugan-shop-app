@@ -69,8 +69,8 @@ function CustomNavbar({ onOrderConform }) {
           {BRAND_NAME}
         </Navbar.Brand>
         <div style={{flex:10}} />
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav ">
+        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+        {/* <Navbar.Collapse id="basic-navbar-nav "> */}
           <div className="d-flex"  >
             <Button
               variant="outline-light"
@@ -124,7 +124,7 @@ function CustomNavbar({ onOrderConform }) {
               />
             </Button>
           </div>
-        </Navbar.Collapse>
+        {/* </Navbar.Collapse> */}
       </Container>
     </Navbar>
   );

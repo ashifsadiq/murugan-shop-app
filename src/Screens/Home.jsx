@@ -27,7 +27,7 @@ const Home = () => {
   useEffect(() => {
     fetchData();
   }, [currentCatIndex]);
-  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
   return (
     <React.Fragment>
       <style>
@@ -77,22 +77,21 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6cd5d4",endCo
 
       <Container
         className="justify-content-md-center padding_top mt-5"
-        style={{ marginTop: "20px" }}
+        style={{ marginBottom: "100px" }}
       >
-        <div>
-          <img src={img1} className="page_image p-2"></img>
+        <div className="image_down">
+          <img src={img1} className="page_image p-2 m-3"></img>
         </div>
 
         {Array.isArray(homeData) && homeData.length > 0 ? (
           currentCatIndex > 0 ? (
             <React.Fragment>
-              <div >
+              <div>
                 <div>
                   <h3
                     style={{
                       color: "black",
                       fontFamily: "Times New Roman, serif",
-                      
                     }}
                   >
                     ({homeData[currentCatIndex].category_tam_name})
@@ -139,6 +138,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6cd5d4",endCo
                               <Button
                                 variant="primary"
                                 onClick={() => {
+                                  // onOrderConform(fetchData)
                                   dispatch(
                                     increment({
                                       cat: currentCatIndex,
