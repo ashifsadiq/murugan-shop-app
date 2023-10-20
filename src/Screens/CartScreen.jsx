@@ -80,6 +80,7 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
           console.log(resJson)
           if(resJson.success == 1){
             onOrderConform(resJson)
+            
             handleOpenClose()
             setErrorText("")
           }else{
@@ -89,6 +90,8 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
       // handle order
     } else setShowAlert(true);
   };
+
+  
   useEffect(() => {
     let tempQty = 0;
     let tempPrice = 0;
@@ -105,6 +108,8 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
     setPrice((tempPrice));
     setCount(tempQty);
   }, [data]);
+
+  
   return (
     <>
       <Modal

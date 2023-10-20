@@ -80,10 +80,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6cd5d4",endCo
         className="justify-content-md-center padding_top mt-5"
         style={{ marginTop: "20px" }}
       >
-        <div>
+        <div className="p-5 m-5 mt-20">
           <img src={img1} className="page_image p-2"></img>
         </div>
-
+<h1 >
+Free delivery - Minimum order should be 2000rs. inside tamilnadu and 5000rs for other states.
+</h1>
         {Array.isArray(homeData) && homeData.length > 0 ? (
           currentCatIndex > 0 ? (
             <React.Fragment>
