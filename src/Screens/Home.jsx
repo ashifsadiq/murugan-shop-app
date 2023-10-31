@@ -315,16 +315,16 @@ Free delivery - Minimum order should be 2000rs. inside tamilnadu and 5000rs forÂ
                                 </React.Fragment>
                               )}
                             </div>
-                            {/* <div style={{ flex: 1 }}>
+                            {item.image != "" && item.image != null && <div style={{ flex: 1 }}>
                               <Image
                                 src={
-                                  "https://source.unsplash.com/random/800x600" +
-                                  item.category_image
+                                  "https://adminmurugan.ashifsadiq.in/ItemImage/" +
+                                  item.image
                                 }
                                 fluid
                                 style={{ objectFit: "cover" }}
                               />
-                            </div> */}
+                            </div>}
                           </div>
                         </Card.Body>
                       </Card>
