@@ -77,10 +77,9 @@ function CartScreen({ showCart = false, setShowCart, onOrderConform }) {
       fetch(`https://adminmurugan.ashifsadiq.in/api/placeOrder.php?userData=${JSON.stringify(userInput)}&products=${JSON.stringify(tempArray)}`)
         .then((res) => res.json())
         .then((resJson) => {
-          console.log(resJson)
           if(resJson.success == 1){
+            alert(resJson.message)
             onOrderConform(resJson)
-            
             handleOpenClose()
             setErrorText("")
           }else{

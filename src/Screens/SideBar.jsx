@@ -10,7 +10,6 @@ function SideBar({ show = false, setOpenSideBase }) {
 
   const dispatch = useDispatch();
   const currentCatIndex = useSelector((state) => state.currentCatIndex) ;
-  console.log("oo",currentCatIndex);
   const handleToggle = () => setOpenSideBase((w) => !w);
 
   return (
